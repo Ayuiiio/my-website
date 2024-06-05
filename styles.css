@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #1e1e1e;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.title-button {
+    font-family: 'Lobster', cursive;
+    font-size: 4em;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    display: inline-block;
+    cursor: pointer;
+    background: linear-gradient(45deg, #FF6B6B, #FFCC00);
+    transition: background-color 0.3s;
+    position: relative;
+    z-index: 10;
+}
+
+.title-button:hover {
+    background: linear-gradient(45deg, #FF6B6B, #FFCC00);
+    background-size: 200% 200%;
+    animation: gradient-animation 0.5s forwards;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.gallery {
+    position: relative;
+    width: 100%;
+    height: calc(80vh - 150px); /* 减去标题按钮的高度 */
+    margin: 0 auto;
+    top: 40px;
+}
+
+.gallery-item {
+    position: absolute;
+    width: 18%; /* 每张图片占据18%的宽度 */
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: scale(1.1);
+}
+
+audio {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* 泡泡特效样式 */
+.bubble {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: rise 5s infinite;
+}
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* 星星特效样式 */
+.star {
+    position: absolute;
+    top: -10%;
+    color: #fff;
+    user-select: none;
+    pointer-events: none;
+    animation: star-fall 10s linear infinite;
+}
+@keyframes star-fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* 页脚样式 */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-content {
+    flex: 1;
+    text-align: center;
+}
+
+/* 放大图片和对话框样式 */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 100; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1e1e1e;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+}
+
+.modal-image {
+    flex: 2;
+    max-width: 100%;
+    max-height: 80vh;
+    margin-right: 20px;
+}
+
+.modal-comments {
+    flex: 1;
+    color: #fff;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>瓦力回忆</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 样式在这里 */
+    </style>
+</head>
+<body>
+    <img src="logo.png" alt="Logo" style="position: absolute; top: 20px; right: 20px; width: 250px; height: auto; z-index: 999;">
+    <div id="playButton" class="title-button">我在瓦力的点点滴滴</div>
+    <div class="gallery">
+        <div class="gallery-item" data-comment="111111111111111"><img src="photo1.jpg" alt="回忆图片1"></div>
+        <div class="gallery-item" data-comment="22222222222222222"><img src="photo2.jpg" alt="回忆图片2"></div>
+        <div class="gallery-item" data-comment="33333333333333333333333"><img src="photo3.jpg" alt="回忆图片3"></div>
+        <div class="gallery-item" data-comment="44444444444444444444444444"><img src="photo4.jpg" alt="回忆图片4"></div>
+        <div class="gallery-item" data-comment="5555555555555555555"><img src="photo5.jpg" alt="回忆图片5"></div>
+        <div class="gallery-item" data-comment="666666666666666666666"><img src="photo6.jpg" alt="回忆图片6"></div>
+        <div class="gallery-item" data-comment="777777777777777777777"><img src="photo7.jpg" alt="回忆图片7"></div>
+        <!-- 添加更多图片 -->
+    </div>
+    <audio id="backgroundMusic" loop>
+        <source src="Recollections.mp3" type="audio/mpeg">
+        您的浏览器不支持音频元素。
+    </audio>
+    <footer>
+        <div class="footer-content">版权所有 © 瓦力工厂</div>
+    </footer>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img class="modal-image" id="modalImage" src="" alt="">
+            <div class="modal-comments">
+                <h2></h2>
+                <p id="comments">这是对图片的评论。</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
