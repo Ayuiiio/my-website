@@ -84,3 +84,40 @@ function createStar() {
         star.remove();
     }, 10000); // Star disappears after 10 seconds
 }
+document.addEventListener('DOMContentLoaded', function() {
+    var playButton = document.getElementById('playButton');
+    var backgroundMusic = document.getElementById('backgroundMusic');
+    var modal = document.getElementById('myModal');
+    var modalImage = document.getElementById('modalImage');
+    var comments = document.getElementById('comments');
+    var closeBtn = document.getElementsByClassName('close')[0];
+
+    playButton.addEventListener('click', function() {
+        if (backgroundMusic.paused) {
+            backgroundMusic.play();
+            playButton.innerText = '暂停音乐';
+        } else {
+            backgroundMusic.pause();
+            playButton.innerText = '播放音乐';
+        }
+    });
+
+    var galleryItems = document.getElementsByClassName('gallery-item');
+    for (var i = 0; i < galleryItems.length; i++) {
+        galleryItems[i].addEventListener('click', function() {
+            modal.style.display = 'block';
+            modalImage.src = this.getElementsByTagName('img')[0].src;
+            comments.innerText = this.getAttribute('data-comment');
+        });
+    }
+
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
